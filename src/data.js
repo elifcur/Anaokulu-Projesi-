@@ -173,48 +173,48 @@ export const KAPANIS = {
     'Doğa, oyun ve keşif temelli eğitim anlayışımızla çocukların hem kalbini hem zihnini besliyoruz. Çünkü güçlü bireyler, sevgi ve güven içinde büyür.',
 }
 
-// Kitaplık — optimize edilmiş kapaklar (public/kitaplar/<id>.webp)
+// Kitaplık — optimize edilmiş kapaklar (public/kitaplar/<ad>.webp)
 export const KITAPLAR = [
-  '6bce82ae-64d0-4b63-9597-f86e1172941f', // Aç Tırtıl
-  '2fad74c7-9400-49df-9bbf-51477274aef8', // Renk Canavarı
-  '44206dd4-30a5-43d8-9ec4-a965f0e66b91', // Minik Tohum
-  'd170f5a5-1376-4a37-871d-c159d4de2019', // Frederick
-  '05a33669-40b8-429a-900f-b46a4595033d', // Yayazula
-  '5819ce0e-2967-4b06-8c73-a6c2bed95bad', // Bukalemun
-  '99e9efc4-1bda-42fd-a89c-552badd2e87e', // Mutlu Suaygırı
-  '89587aa7-cf2a-4c9f-a2ca-5b384ac9afd9', // Hopi
-  '375e3788-3923-452b-ba3b-840333ccc13e', // Sihirli Ağaç
-  'c28cb1fb-cec3-4fe6-b686-ad464585280e', // Sarılalım mı
-  '20231bcd-d4e1-4052-b0cb-ab900eef133d', // Tavşanlar & kitap
-  '3ba3dcee-459b-496c-98c6-2311ef60fbeb', // Nokta
-  '7260302d-057d-4afe-9df4-78191a3fbdb4', // Ağaca Tırmanan İnek
-  '50ef9c12-e794-4010-a8d8-15d8f76b5bcf', // Utangaç Ayı Monti
-  'd4fb264b-7df8-45cf-8c2c-9793e9cb9f06', // Panda okul
-  'f2c20b05-e989-4923-9064-a422cd16404f', // Balina
-  '9b302a62-ac6e-4e4f-9273-ee5e5d5c0c84', // Pezzettino
-  'fba8fb81-29fa-403d-86c6-374d9a43f970', // Çu Plajda
-  '83222baa-08ae-4a6f-8344-5b7c231da618', // Doğum günü bahçe
-  '131885de-60b3-4bfc-a5ad-81e7e563e8fd', // Bir Kedi Olsaydım
-  '4389d653-ac51-462a-b8c9-a0d5b2b8903f', // Orman sahnesi
-  'e85dda27-04b2-42b6-bee4-237286fa48d6', // Balkabakları
-  '73433012-a65e-4e98-a7af-3a6fe0a68b90', // Muhteşem Aşçı
-  'fd11d8fc-e731-434e-bc07-25cd47460484', // Dedektif Zebra
-  '1bab3c59-4015-4ca5-bbc5-f06d5397a254', // Petra
-  '6e584ff5-225d-4f15-963c-da7c2089592f', // Kirpi
-  'f0d9758e-a7d0-4a5e-9891-7342e972e00e', // Canavarını Besle
-  '3a24b491-3cbd-4b7a-b2c6-1545c926c34e', // Karıştır Renklendir
-  '7b52d0d8-182b-44c0-9da4-6133b5ad9ec0', // Boşluk
-  'bb666282-ecad-4292-809b-6e02340daa1e', // Penguen
+  'ac-tirtil', // Aç Tırtıl
+  'renk-canavari', // Renk Canavarı
+  'minik-tohum', // Minik Tohum
+  'frederick', // Frederick
+  'yayazula', // Yayazula
+  'bukalemun', // Kafası Karışık Bukalemun
+  'mutlu-suaygiri', // Mutlu Suaygırı
+  'hopi', // Küçük Cesur Tavşan Hopi
+  'sihirli-agac', // Dokun Sihirli Ağaca
+  'sarilalim-mi', // Sarılalım mı?
+  'tavsanlar-kitap', // Tavşanlar & kitap
+  'nokta', // Nokta
+  'agaca-tirmanan-inek', // Ağaca Tırmanan İnek
+  'utangac-ayi-monti', // Utangaç Ayı Monti
+  'panda-okul', // Panda'nın ilk okul günü
+  'balina', // Balina
+  'pezzettino', // Pezzettino
+  'cu-plajda', // Çu Plajda
+  'dogum-gunu', // Doğum günü bahçe
+  'bir-kedi-olsaydim', // Bir Kedi Olsaydım
+  'orman', // Orman sahnesi
+  'balkabaklari', // Balkabakları
+  'muhtesem-asci', // Muhteşem Aşçı
+  'dedektif-zebra', // Dedektif Zebra
+  'petra', // Petra
+  'kirpi', // Kirpi
+  'canavarini-besle', // Canavarını Besle
+  'karistir-renklendir', // Karıştır Renklendir
+  'bosluk', // Boşluk
+  'penguen-bir-milyon', // Bir Milyon Ne Kadar Büyük (penguen)
 ]
 
 // Süzülen kahraman kitapları (küçük, dikkat çekici kapaklar)
 export const HERO_KITAPLAR = [
-  '6bce82ae-64d0-4b63-9597-f86e1172941f',
-  '2fad74c7-9400-49df-9bbf-51477274aef8',
-  '44206dd4-30a5-43d8-9ec4-a965f0e66b91',
-  '05a33669-40b8-429a-900f-b46a4595033d',
-  'd170f5a5-1376-4a37-871d-c159d4de2019',
-  'c28cb1fb-cec3-4fe6-b686-ad464585280e',
-  '50ef9c12-e794-4010-a8d8-15d8f76b5bcf',
-  '99e9efc4-1bda-42fd-a89c-552badd2e87e',
+  'ac-tirtil',
+  'renk-canavari',
+  'minik-tohum',
+  'yayazula',
+  'frederick',
+  'sarilalim-mi',
+  'utangac-ayi-monti',
+  'mutlu-suaygiri',
 ]

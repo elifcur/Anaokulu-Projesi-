@@ -2,10 +2,10 @@ import sharp from 'sharp'
 import { readdir, mkdir } from 'node:fs/promises'
 import { join, parse } from 'node:path'
 
-const SRC = 'photos'
+const SRC = 'images'
 const OUT = 'public/kitaplar'
 // Logo files to skip (handled separately)
-const SKIP = new Set(['heren anaokul.jpg', 'd473566d-5f43-47df-9a10-72176020daa1.jpg'])
+const SKIP = new Set(['logo-heren.jpg', 'yayinevi-logo.jpg'])
 
 await mkdir(OUT, { recursive: true })
 const files = (await readdir(SRC)).filter(
