@@ -34,7 +34,7 @@ Neredeyse tüm metin ve ayarlar tek dosyada: **`src/data.js`**
 
 ## Görseller
 
-- Kaynak görseller `fotolar/` içinde.
+- Kaynak görseller `photos/` içinde.
 - `scripts/optimize-images.mjs` bunları `public/kitaplar/` içine webp olarak
   küçültür (`<id>.webp` galeri, `<id>-sm.webp` süzülen). Yeni görsel eklerseniz
   `node scripts/optimize-images.mjs` komutunu tekrar çalıştırın.

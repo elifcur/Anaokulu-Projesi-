@@ -2,7 +2,7 @@ import sharp from 'sharp'
 import { readdir, mkdir } from 'node:fs/promises'
 import { join, parse } from 'node:path'
 
-const SRC = 'fotolar'
+const SRC = 'photos'
 const OUT = 'public/kitaplar'
 // Logo files to skip (handled separately)
 const SKIP = new Set(['heren anaokul.jpg', 'd473566d-5f43-47df-9a10-72176020daa1.jpg'])
