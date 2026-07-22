@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="wrap footer__grid">
         <div>
           <div className="footer__brand">
-            a<span className="brand__badge">
+            <span className="brand__badge">
               <img src="/logo.webp" alt="" />
             </span>
             <span>Heren Doğa</span>
