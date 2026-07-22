@@ -44,6 +44,10 @@
     />
     <meta name="twitter:image" content="https://www.herendoga.com/og-image.jpg" />
 
+    <!-- İlk görünen logoları öne al (daha hızlı açılış / LCP) -->
+    <link rel="preload" as="image" href="/logo-header.webp" />
+    <link rel="preload" as="image" href="/logo-cut.webp" fetchpriority="high" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

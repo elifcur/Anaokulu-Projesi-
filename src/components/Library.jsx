@@ -15,9 +15,12 @@ function Row({ ids, reverse, dur }) {
             style={{ '--r': `${rots[i % rots.length]}deg` }}
           >
             <img
-              src={`/kitaplar/${id}.webp`}
+              src={`/kitaplar/${id}-sm.webp`}
               alt="Sınıf kitaplığından bir hikâye kitabı"
               loading="lazy"
+              decoding="async"
+              width="168"
+              height="224"
             />
           </div>
         ))}

@@ -15,9 +15,12 @@ export default function LibraryGrid() {
               style={{ '--r': `${rots[i % rots.length]}deg`, animationDelay: `${(i % 6) * 0.05}s` }}
             >
               <img
-                src={`/kitaplar/${id}.webp`}
+                src={`/kitaplar/${id}-sm.webp`}
                 alt="Sınıf kitaplığından bir hikâye kitabı"
                 loading="lazy"
+                decoding="async"
+                width="380"
+                height="507"
               />
             </div>
           ))}

@@ -61,6 +61,9 @@ export default function Hero() {
             src="/logo-cut.webp"
             alt={`${OKUL.adTam} logosu`}
             width="560"
+            height="336"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useReveal } from './components/useReveal'
 import { useSeo } from './seo'
@@ -5,10 +6,12 @@ import ScrollToTop from './components/ScrollToTop'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Hakkimizda from './pages/Hakkimizda'
-import Yaklasim from './pages/Yaklasim'
-import Kitaplik from './pages/Kitaplik'
-import Iletisim from './pages/Iletisim'
+
+// İkincil sayfalar tembel yüklenir (ilk açılışta kodları inmez → daha hızlı).
+const Hakkimizda = lazy(() => import('./pages/Hakkimizda'))
+const Yaklasim = lazy(() => import('./pages/Yaklasim'))
+const Kitaplik = lazy(() => import('./pages/Kitaplik'))
+const Iletisim = lazy(() => import('./pages/Iletisim'))
 
 export default function App() {
   const { pathname } = useLocation()
@@ -22,14 +25,16 @@ export default function App() {
       <ScrollToTop />
       <Nav />
       <main key={pathname}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/hakkimizda" element={<Hakkimizda />} />
-          <Route path="/yaklasimimiz" element={<Yaklasim />} />
-          <Route path="/kitaplik" element={<Kitaplik />} />
-          <Route path="/iletisim" element={<Iletisim />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/hakkimizda" element={<Hakkimizda />} />
+            <Route path="/yaklasimimiz" element={<Yaklasim />} />
+            <Route path="/kitaplik" element={<Kitaplik />} />
+            <Route path="/iletisim" element={<Iletisim />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </>
