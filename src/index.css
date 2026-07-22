@@ -1501,7 +1501,11 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
   .features__card {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .feature {
+    padding: 1.1rem 1rem;
   }
   .hero__doodles {
     display: none;
