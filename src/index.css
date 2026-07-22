@@ -1202,7 +1202,9 @@ p {
   background: rgba(76, 160, 31, 0.14);
 }
 .nav__mobile {
-  margin: 0.45rem 0 0.7rem;
+  width: 100%;
+  max-width: 290px;
+  margin: 0.45rem 0 0.7rem auto;
   padding: 0.5rem;
   background: var(--card);
   border-radius: 20px;
