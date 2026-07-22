@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Yayına alınca alan adını gerçek adresle değiştirin
+Sitemap: https://www.herendoga.com/sitemap.xml
