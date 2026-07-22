@@ -9,7 +9,7 @@ import { Phone, Mail, Pin, Insta, Arrow } from './icons'
 const ALICI_EPOSTA = OKUL.eposta
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${ALICI_EPOSTA}`
 
-const YASLAR = ['3 yaş', '4 yaş', '5 yaş', '6 yaş', 'Henüz emin değilim']
+const YASLAR = ['3 yaş', '4 yaş', '5 yaş', '6 yaş']
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -34,10 +34,13 @@ export default function Contact() {
     const er = {}
     if (!form.veli.trim()) er.veli = 'Lütfen adınızı yazın.'
     const telOk = form.telefon.replace(/\D/g, '').length >= 10
+    if (!form.telefon.trim()) er.telefon = 'Lütfen telefon numaranızı yazın.'
+    else if (!telOk) er.telefon = 'Geçerli bir telefon numarası girin.'
     const mailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.eposta)
-    if (!telOk && !mailOk)
-      er.telefon = 'Size ulaşabilmemiz için telefon ya da geçerli e-posta bırakın.'
-    if (form.eposta && !mailOk) er.eposta = 'E-posta adresi geçerli görünmüyor.'
+    if (!form.eposta.trim()) er.eposta = 'Lütfen e-posta adresinizi yazın.'
+    else if (!mailOk) er.eposta = 'E-posta adresi geçerli görünmüyor.'
+    if (!form.yas) er.yas = 'Lütfen çocuğunuzun yaşını seçin.'
+    if (!form.mesaj.trim()) er.mesaj = 'Lütfen mesajınızı yazın.'
     setErrors(er)
     return Object.keys(er).length === 0
   }
@@ -173,6 +176,7 @@ export default function Contact() {
                     placeholder="05__ ___ __ __"
                     aria-invalid={!!errors.telefon}
                   />
+                  {errors.telefon && <span className="err">{errors.telefon}</span>}
                 </div>
                 <div>
                   <label htmlFor="eposta">E-posta</label>
@@ -185,17 +189,19 @@ export default function Contact() {
                     placeholder="ornek@eposta.com"
                     aria-invalid={!!errors.eposta}
                   />
+                  {errors.eposta && <span className="err">{errors.eposta}</span>}
                 </div>
               </div>
-              {(errors.telefon || errors.eposta) && (
-                <span className="err" style={{ marginTop: '-0.6rem', display: 'block' }}>
-                  {errors.telefon || errors.eposta}
-                </span>
-              )}
 
               <div className="field">
                 <label htmlFor="yas">Çocuğunuzun yaşı</label>
-                <select id="yas" name="yas" value={form.yas} onChange={set('yas')}>
+                <select
+                  id="yas"
+                  name="yas"
+                  value={form.yas}
+                  onChange={set('yas')}
+                  aria-invalid={!!errors.yas}
+                >
                   <option value="">Seçiniz</option>
                   {YASLAR.map((y) => (
                     <option key={y} value={y}>
@@ -203,6 +209,7 @@ export default function Contact() {
                     </option>
                   ))}
                 </select>
+                {errors.yas && <span className="err">{errors.yas}</span>}
               </div>
 
               <div className="field">
@@ -213,7 +220,9 @@ export default function Contact() {
                   value={form.mesaj}
                   onChange={set('mesaj')}
                   placeholder="Merak ettikleriniz, ziyaret için uygun günleriniz…"
+                  aria-invalid={!!errors.mesaj}
                 />
+                {errors.mesaj && <span className="err">{errors.mesaj}</span>}
               </div>
 
               {sendError && (
@@ -226,7 +235,7 @@ export default function Contact() {
                 <Arrow width="18" height="18" />
               </button>
               <p className="form__consent">
-                Bilgileriniz yalnızca sizinle iletişim için kullanılır.
+                Tüm alanlar zorunludur. Bilgileriniz yalnızca sizinle iletişim için kullanılır.
               </p>
             </form>
           )}

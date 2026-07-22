@@ -974,6 +974,7 @@ p {
   margin-top: 0.35rem;
 }
 .field input[aria-invalid='true'],
+.field select[aria-invalid='true'],
 .field textarea[aria-invalid='true'] {
   border-color: var(--terra);
   background: #fff6f0;
