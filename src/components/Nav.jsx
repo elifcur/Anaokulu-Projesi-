@@ -67,20 +67,18 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="wrap">
-          <div className="nav__mobile">
-            {MOBILE_LINKS.map(([to, label]) => (
-              <NavLink
-                key={to}
-                to={to}
-                end={to === '/'}
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                <span className="nav__dot" aria-hidden="true" />
-                {label}
-              </NavLink>
-            ))}
-          </div>
+        <div className="nav__mobile">
+          {MOBILE_LINKS.map(([to, label]) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <span className="nav__dot" aria-hidden="true" />
+              {label}
+            </NavLink>
+          ))}
         </div>
       )}
     </nav>

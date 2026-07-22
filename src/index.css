@@ -1202,13 +1202,15 @@ p {
   background: rgba(76, 160, 31, 0.14);
 }
 .nav__mobile {
-  width: 100%;
-  max-width: 290px;
-  margin: 0.45rem 0 0.7rem auto;
+  position: absolute;
+  top: calc(100% - 0.3rem);
+  right: 1.2rem;
+  width: min(280px, calc(100vw - 2.4rem));
+  z-index: 70;
   padding: 0.5rem;
   background: var(--card);
   border-radius: 20px;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 24px 50px -20px rgba(53, 45, 20, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.6);
   display: flex;
   flex-direction: column;
