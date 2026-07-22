@@ -1500,12 +1500,31 @@ p {
   .grid-books {
     grid-template-columns: repeat(2, 1fr);
   }
+  /* her özellik ayrı çerçeveli kart (referans stili) */
+  .features {
+    margin-top: 0.5rem;
+  }
   .features__card {
     grid-template-columns: 1fr;
-    gap: 0.4rem;
+    gap: 1rem;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
   }
   .feature {
-    padding: 1.1rem 1rem;
+    text-align: left;
+    padding: 1.4rem 1.3rem;
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 14px 34px -26px rgba(53, 70, 25, 0.6);
+  }
+  .feature__ico {
+    margin: 0 0 0.9rem 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
   }
   .hero__doodles {
     display: none;
