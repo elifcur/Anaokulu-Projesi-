@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { OKUL } from '../data'
-import { Arrow } from './icons'
+import { Arrow, Phone } from './icons'
 
 const LINKS = [
   ['/', 'Anasayfa'],
@@ -9,6 +9,8 @@ const LINKS = [
   ['/yaklasimimiz', 'Yaklaşımımız'],
   ['/kitaplik', 'Kitaplığımız'],
 ]
+// Mobil menüde İletişim de listede yer alsın
+const MOBILE_LINKS = [...LINKS, ['/iletisim', 'İletişim']]
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -23,6 +25,8 @@ export default function Nav() {
   }, [])
 
   useEffect(() => setOpen(false), [pathname])
+
+  const telHref = `tel:${OKUL.telefon.replace(/[^0-9+]/g, '')}`
 
   return (
     <nav className={`nav ${scrolled || open ? 'scrolled' : ''}`}>
@@ -47,26 +51,36 @@ export default function Nav() {
           </Link>
         </div>
 
-        <button
-          className="nav__burger"
-          aria-label="Menü"
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          {open ? '✕' : '☰'}
-        </button>
+        <div className="nav__mobtools">
+          <a className="nav__call" href={telHref} aria-label="Bizi arayın">
+            <Phone width="20" height="20" />
+          </a>
+          <button
+            className="nav__burger"
+            aria-label={open ? 'Menüyü kapat' : 'Menüyü aç'}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? '✕' : '☰'}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="nav__mobile">
-          {LINKS.map(([to, label]) => (
-            <NavLink key={to} to={to} end={to === '/'}>
-              {label}
-            </NavLink>
-          ))}
-          <Link className="btn" to="/iletisim">
-            İletişim <Arrow width="18" height="18" />
-          </Link>
+        <div className="wrap">
+          <div className="nav__mobile">
+            {MOBILE_LINKS.map(([to, label]) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={to === '/'}
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                <span className="nav__dot" aria-hidden="true" />
+                {label}
+              </NavLink>
+            ))}
+          </div>
         </div>
       )}
     </nav>
