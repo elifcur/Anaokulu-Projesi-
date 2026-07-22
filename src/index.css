@@ -1463,6 +1463,61 @@ p {
   .approach__head {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+  }
+
+  /* --- mobil düzen & boşluk iyileştirmeleri --- */
+  .section {
+    padding: 2.9rem 0;
+  }
+  .hero {
+    padding: 1rem 0 2.4rem;
+  }
+  .hero__grid {
+    gap: 1.4rem;
+  }
+  .features {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  .features__card {
+    gap: 1.4rem 1rem;
+    padding: 1.6rem 1.1rem;
+  }
+  .pagehero {
+    padding: 2.2rem 0 2.4rem;
+  }
+  .develop__inner,
+  .contact__grid {
+    gap: 1.6rem;
+  }
+  .rhythm__grid,
+  .cards {
+    margin-top: 1.6rem;
+    gap: 1rem;
+  }
+  .library__head,
+  .about__intro {
+    margin-bottom: 1.8rem;
+  }
+  .manifesto__card,
+  .cta__card {
+    padding: 2.2rem 1.4rem;
+  }
+  .footer {
+    padding-top: 3rem;
+  }
+  /* sabit menü yarı saydam kalıp başlıkları göstermesin */
+  .nav.scrolled {
+    background: rgba(247, 241, 224, 0.96);
+  }
+  /* mobilde reveal animasyonunu kapat: içerik hep görünür, boş alan kalmaz */
+  .reveal,
+  .reveal.in {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }
 
