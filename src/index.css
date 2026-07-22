@@ -1115,9 +1115,8 @@ p {
   letter-spacing: 0.02em;
 }
 .tasarloji b {
-  /* Tasarloji marka gradyanı (kendi sitelerindeki logo rengi) */
-  color: #e01f8b;
-  background: linear-gradient(90deg, #e01f8b, #b021d6 55%, #7c2ff5);
+  color: var(--gold);
+  background: linear-gradient(90deg, var(--gold), var(--terra));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1472,8 +1471,8 @@ p {
     min-height: unset;
   }
   .hero__stage {
-    min-height: 360px;
-    order: 2;
+    min-height: 300px;
+    order: -1;
   }
   .footer__grid {
     grid-template-columns: 1fr 1fr;
