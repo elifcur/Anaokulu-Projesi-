@@ -1,6 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useReveal } from './components/useReveal'
 import { useSeo } from './seo'
 import ScrollToTop from './components/ScrollToTop'
 import Nav from './components/Nav'
@@ -21,8 +20,6 @@ const Iletisim = lazy(load.iletisim)
 
 export default function App() {
   const { pathname } = useLocation()
-  // Her rota değişiminde yeni .reveal öğelerini gözle.
-  useReveal(pathname)
   // Her rota için başlık/meta etiketlerini güncelle (SEO).
   useSeo(pathname)
 

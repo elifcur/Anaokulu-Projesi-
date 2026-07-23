@@ -1187,11 +1187,9 @@ p {
     transform: translateY(0);
   }
 }
+/* Saf CSS belirme: içerik yüklenince kendiliğinden görünür olur (asla gizli kalmaz) */
 .reveal {
-  opacity: 0;
-}
-.reveal.in {
-  animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* ============================================================
