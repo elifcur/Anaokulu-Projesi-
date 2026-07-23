@@ -722,8 +722,9 @@ p {
 }
 .chips {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
 }
 .chip {
   display: inline-flex;
