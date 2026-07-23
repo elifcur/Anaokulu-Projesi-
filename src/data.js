@@ -5,7 +5,7 @@ export const OKUL = {
   adTam: 'Özel Heren Doğa Anaokulu',
   slogan: 'Doğanın içinde, çocuğun ritminde.',
   telefon: '+90 (___) ___ __ __',
-  eposta: 'info@herendoga.com',
+  eposta: 'info@herenanaokulu.com',
   adres: 'Adres bilgisi buraya',
   instagram: '@herendoga',
 }

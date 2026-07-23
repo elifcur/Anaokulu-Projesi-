@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 // Yayına alınca gerçek alan adınızla değiştirin (index.html, sitemap.xml, robots.txt içinde de).
-export const BASE_URL = 'https://www.herendoga.com'
+export const BASE_URL = 'https://herenanaokulu.com'
 
 // Her sayfa (rota) için başlık ve açıklama
 const PAGES = {
