@@ -39,7 +39,7 @@ export default function App() {
     <>
       <ScrollToTop />
       <Nav />
-      <main key={pathname}>
+      <main>
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
