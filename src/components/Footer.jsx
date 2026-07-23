@@ -22,7 +22,7 @@ export default function Footer() {
         <div>
           <div className="footer__brand">
             <span className="brand__badge">
-              <img src="/logo.webp" alt="" />
+              <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="" />
             </span>
             <span>Heren Doğa</span>
           </div>

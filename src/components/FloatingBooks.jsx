@@ -28,7 +28,12 @@ export default function FloatingBooks() {
               '--delay': `${b.delay}s`,
             }}
           >
-            <img src={`/kitaplar/${id}-sm.webp`} alt="" width={b.w} loading="lazy" />
+            <img
+              src={`${import.meta.env.BASE_URL}kitaplar/${id}-sm.webp`}
+              alt=""
+              width={b.w}
+              loading="lazy"
+            />
           </div>
         )
       })}

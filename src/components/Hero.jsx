@@ -58,7 +58,7 @@ export default function Hero() {
           <span className="hero__halo" aria-hidden="true" />
           <img
             className="hero__logo"
-            src="/logo-cut.webp"
+            src={`${import.meta.env.BASE_URL}logo-cut.webp`}
             alt={`${OKUL.adTam} logosu`}
             width="560"
             height="336"

@@ -32,7 +32,11 @@ export default function Nav() {
     <nav className={`nav ${scrolled || open ? 'scrolled' : ''}`}>
       <div className="wrap nav__inner">
         <Link className="brand" to="/" aria-label={OKUL.adTam}>
-          <img className="brand__logo" src="/logo-header.webp" alt={OKUL.adTam} />
+          <img
+            className="brand__logo"
+            src={`${import.meta.env.BASE_URL}logo-header.webp`}
+            alt={OKUL.adTam}
+          />
         </Link>
 
         <div className="nav__links">

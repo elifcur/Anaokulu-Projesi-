@@ -8,6 +8,9 @@ import { join, extname, dirname } from 'node:path'
 const DIST = 'dist'
 const PORT = 4321
 const ROUTES = ['/hakkimizda', '/yaklasimimiz', '/kitaplik', '/iletisim', '/']
+// Yayın alt yolu (vite base ile aynı). Kök için '/'.
+const BASE = process.env.BASE_PATH || '/'
+const BASE_NO_SLASH = BASE.replace(/\/$/, '') // '' | '/Anaokulu-Projesi-'
 
 const MIME = {
   '.html': 'text/html',
@@ -31,7 +34,11 @@ async function main() {
 
   const server = http.createServer(async (req, res) => {
     try {
-      const urlPath = decodeURIComponent(req.url.split('?')[0])
+      let urlPath = decodeURIComponent(req.url.split('?')[0])
+      // base ön ekini kaldır (ör. /Anaokulu-Projesi-/assets/x.js → /assets/x.js)
+      if (BASE_NO_SLASH && urlPath.startsWith(BASE_NO_SLASH)) {
+        urlPath = urlPath.slice(BASE_NO_SLASH.length) || '/'
+      }
       const filePath = join(DIST, urlPath)
       const data = await readFile(filePath).catch(() => null)
       if (data && extname(filePath)) {
@@ -55,7 +62,8 @@ async function main() {
   const page = await (await browser.newContext()).newPage()
 
   for (const route of ROUTES) {
-    await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: 'networkidle' })
+    const visitPath = route === '/' ? BASE : BASE_NO_SLASH + route
+    await page.goto(`http://localhost:${PORT}${visitPath}`, { waitUntil: 'networkidle' })
     await page.waitForTimeout(700)
     // reveal ile gizlenen içerik statik HTML'de görünür kalsın
     await page.evaluate(() =>
