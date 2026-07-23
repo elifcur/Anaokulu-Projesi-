@@ -1,0 +1,65 @@
+name: GitHub Pages'e Yayınla
+
+# main'e her push'ta (veya elle) çalışır
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Aynı anda tek yayın çalışsın
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu çek
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Bağımlılıkları kur
+        run: npm ci
+
+      - name: Playwright (prerender için) kur
+        run: npx playwright install --with-deps chromium
+
+      - name: Build (GitHub Pages alt yolu ile)
+        env:
+          BASE_PATH: /Anaokulu-Projesi-/
+        run: npm run build
+
+      - name: SPA yedeği (404) + Jekyll kapat
+        run: |
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
+
+      - name: Pages ayarı
+        uses: actions/configure-pages@v5
+
+      - name: Çıktıyı yükle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages'e dağıt
+        id: deployment
+        uses: actions/deploy-pages@v4
