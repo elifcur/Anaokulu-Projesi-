@@ -170,7 +170,7 @@ export const SLOGANLAR = [
 export const KAPANIS = {
   baslik: 'Çocuklar için güvenli bir yuva,\naileler için güçlü bir gelecek.',
   metin:
-    'Doğa, oyun ve keşif temelli eğitim anlayışımızla çocukların hem kalbini hem zihnini besliyoruz. Çünkü güçlü bireyler, sevgi ve güven içinde büyür.',
+    'Doğa, oyun ve keşif temelli eğitim anlayışımızla çocukların hem kalbini hem zihnini besliyoruz. Doğadan ilham alan okul öncesi eğitim.',
 }
 
 // Kitaplık — optimize edilmiş kapaklar (public/kitaplar/<ad>.webp)
