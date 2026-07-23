@@ -20,10 +20,17 @@ sağlar; Vercel için `vercel.json` rewrite kuralı gerekebilir.
 
 ```bash
 npm install
-npm run dev      # geliştirme sunucusu (http://localhost:5173)
-npm run build    # dist/ klasörüne yayına hazır çıktı
-npm run preview  # build çıktısını önizle
+npm run dev       # geliştirme sunucusu (http://localhost:5173)
+npm run build     # dist/ + her sayfayı statik HTML'e döken prerender (SEO)
+npm run build:fast # sadece Vite build (prerender'sız, daha hızlı)
+npm run preview   # build çıktısını önizle
 ```
+
+`npm run build`, Vite derlemesinden sonra `scripts/prerender.mjs`'i çalıştırır:
+her rotayı (/, /hakkimizda …) gerçek tarayıcıda açıp içeriği + meta etiketleri
+gömülü **statik HTML** olarak `dist/<rota>/index.html` içine yazar. Böylece SEO ve
+sosyal paylaşım botları tam HTML görür. Prerender başarısız olsa bile build geçerli
+kalır (SPA olarak çalışır).
 
 ## İçeriği düzenleme
 
