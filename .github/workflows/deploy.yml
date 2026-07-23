@@ -35,7 +35,9 @@ jobs:
       - name: Playwright (prerender için) kur
         run: npx playwright install --with-deps chromium
 
-      - name: Build (özel alan adı — kök /)
+      - name: Build (GitHub Pages alt yolu — geçici; DNS bitince kaldırılacak)
+        env:
+          BASE_PATH: /Anaokulu-Projesi-/
         run: npm run build
 
       - name: SPA yedeği (404) + Jekyll kapat
