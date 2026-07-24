@@ -23,7 +23,7 @@ export default function Develop() {
             return (
               <span className="chip" key={g.ad}>
                 <span className="chip__ico">
-                  <Ico width="20" height="20" />
+                  <Ico width="26" height="26" />
                 </span>
                 {g.ad} gelişim
               </span>
