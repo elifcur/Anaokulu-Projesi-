@@ -709,7 +709,7 @@ p {
    ============================================================ */
 .develop__inner {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr 0.9fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
@@ -723,7 +723,7 @@ p {
 .chips {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 0.7rem;
 }
 .chip {
