@@ -402,7 +402,6 @@ p {
   width: min(126%, 860px);
   margin-inline: -8% -6%;
   filter: drop-shadow(0 26px 40px rgba(53, 70, 25, 0.28));
-  animation: sway 6.5s ease-in-out infinite;
   transform-origin: 50% 90%;
 }
 /* logonun arkasındaki yumuşak ışık halkası */
