@@ -35,9 +35,11 @@ jobs:
       - name: Playwright (prerender için) kur
         run: npx playwright install --with-deps chromium
 
+      # Alt yol depo adından türetilir; böylece depo adı değişse de kırılmaz.
+      # Özel alan adına geçilince bu adım BASE_PATH'siz bırakılmalı (kök '/').
       - name: Build (GitHub Pages alt yolu — geçici; DNS bitince kaldırılacak)
         env:
-          BASE_PATH: /Anaokulu-Projesi-/
+          BASE_PATH: /${{ github.event.repository.name }}/
         run: npm run build
 
       - name: SPA yedeği (404) + Jekyll kapat
