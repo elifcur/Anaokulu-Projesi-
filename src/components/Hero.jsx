@@ -60,8 +60,8 @@ export default function Hero() {
             className="hero__logo"
             src={`${import.meta.env.BASE_URL}logo-cut.webp`}
             alt={`${OKUL.adTam} logosu`}
-            width="560"
-            height="336"
+            width="900"
+            height="900"
             fetchpriority="high"
             decoding="async"
           />

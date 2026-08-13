@@ -11,7 +11,7 @@ export default function Hakkimizda() {
         eyebrow="Hakkımızda"
         title="Doğanın içinde,"
         titleEm="çocuğun yanında."
-        subtitle="Özel Heren Doğa Anaokulu; doğa, oyun ve keşif temelli, çocuk merkezli bir okul öncesi eğitim yuvasıdır."
+        subtitle="Toprak Güncesi Anaokulu; doğa, oyun ve keşif temelli, çocuk merkezli bir okul öncesi eğitim yuvasıdır."
       />
 
       <Manifesto />

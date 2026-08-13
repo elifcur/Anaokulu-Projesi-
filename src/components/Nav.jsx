@@ -12,6 +12,16 @@ const LINKS = [
 // Mobil menüde İletişim de listede yer alsın
 const MOBILE_LINKS = [...LINKS, ['/iletisim', 'İletişim']]
 
+// Harf renkleri logodaki dizilimi birebir izler
+const MARKA = [
+  ['T', 'yesil'],
+  ['o', 'turuncu'],
+  ['p', 'yesil'],
+  ['r', 'turuncu'],
+  ['a', 'yesil'],
+  ['k', 'kahve'],
+]
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
@@ -32,11 +42,17 @@ export default function Nav() {
     <nav className={`nav ${scrolled || open ? 'scrolled' : ''}`}>
       <div className="wrap nav__inner">
         <Link className="brand" to="/" aria-label={OKUL.adTam}>
-          <img
-            className="brand__logo"
-            src={`${import.meta.env.BASE_URL}logo-header.webp`}
-            alt={OKUL.adTam}
-          />
+          <img className="brand__logo" src={`${import.meta.env.BASE_URL}logo-header.webp`} alt="" />
+          {/* okunan ad Link'in aria-label'ından gelir; buradaki harfler görseldir */}
+          <span className="brand__name" aria-hidden="true">
+            {MARKA.map(([harf, renk], i) => (
+              <span key={i} className={`brand__ch--${renk}`}>
+                {harf}
+              </span>
+            ))}{' '}
+            <span className="brand__ch--kahve">Güncesi</span>
+            <small>Anaokulu</small>
+          </span>
         </Link>
 
         <div className="nav__links">
@@ -50,10 +66,11 @@ export default function Nav() {
               {label}
             </NavLink>
           ))}
-          <Link className="btn nav__cta" to="/iletisim">
-            İletişim <Arrow width="18" height="18" />
-          </Link>
         </div>
+
+        <Link className="btn nav__cta" to="/iletisim">
+          İletişim <Arrow width="18" height="18" />
+        </Link>
 
         <div className="nav__mobtools">
           <a className="nav__call" href={telHref} aria-label="Bizi arayın">

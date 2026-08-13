@@ -1,32 +1,32 @@
 import { useEffect } from 'react'
 
 // Yayına alınca gerçek alan adınızla değiştirin (index.html, sitemap.xml, robots.txt içinde de).
-export const BASE_URL = 'https://herenanaokulu.com'
+export const BASE_URL = 'https://toprakguncesi.com'
 
 // Her sayfa (rota) için başlık ve açıklama
 const PAGES = {
   '/': {
-    title: 'Heren Doğa Anaokulu | Doğa Temelli Okul Öncesi Eğitim',
+    title: 'Toprak Güncesi Anaokulu | Doğa Temelli Okul Öncesi Eğitim',
     description:
-      'Özel Heren Doğa Anaokulu — Montessori, Waldorf ve Reggio Emilia yaklaşımlarını doğa ve oyunla buluşturan çocuk merkezli okul öncesi eğitim. Doğanın içinde, çocuğun ritminde.',
+      'Toprak Güncesi Anaokulu — Montessori, Waldorf ve Reggio Emilia yaklaşımlarını doğa ve oyunla buluşturan çocuk merkezli okul öncesi eğitim. Doğanın içinde, çocuğun ritminde.',
   },
   '/hakkimizda': {
-    title: 'Hakkımızda | Heren Doğa Anaokulu',
+    title: 'Hakkımızda | Toprak Güncesi Anaokulu',
     description:
       'Çocukların doğadan kopmadığı, oyunun eğitimden ayrılmadığı bir yuva. Eklektik ve çocuk merkezli eğitim anlayışımız, vizyonumuz ve değerlerimiz.',
   },
   '/yaklasimimiz': {
-    title: 'Yaklaşımımız | Heren Doğa Anaokulu',
+    title: 'Yaklaşımımız | Toprak Güncesi Anaokulu',
     description:
       'Montessori’nin bağımsızlığı, Waldorf’un hayal gücü ve Reggio Emilia’nın keşfini doğa ve oyunla buluşturan bütüncül eğitim yaklaşımımız.',
   },
   '/kitaplik': {
-    title: 'Kitaplığımız | Heren Doğa Anaokulu',
+    title: 'Kitaplığımız | Toprak Güncesi Anaokulu',
     description:
       'Aç Tırtıl’dan Frederick’e, Minik Tohum’dan Renk Canavarı’na… Çocukların günlerine bir hikâyeyle başladığı zengin sınıf kitaplığımız.',
   },
   '/iletisim': {
-    title: 'İletişim & Ön Kayıt | Heren Doğa Anaokulu',
+    title: 'İletişim & Ön Kayıt | Toprak Güncesi Anaokulu',
     description:
       'Çocuğunuz için doğanın içinde bir yuva mı arıyorsunuz? Ön kayıt ve okul gezisi için bize ulaşın, sizi kahvaltıya bekleyelim.',
   },

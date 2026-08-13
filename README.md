@@ -1,4 +1,4 @@
-# Heren Doğa Anaokulu — web sitesi
+# Toprak Güncesi Anaokulu — web sitesi
 
 Doğa temelli anaokulu için Vite + React (React Router) ile hazırlanmış çok
 sayfalı tanıtım sitesi. Tasarım: "doğanın içinde bir masal çayırı" — logodan
@@ -53,7 +53,7 @@ e-posta gönderir (sunucu/kayıt gerekmez).
 
 **Kurulum (tek seferlik):**
 1. `src/data.js` içinde `OKUL.eposta` değerini **gerçek** alıcı adresle
-   değiştirin (ör. `info@herendoga.com`).
+   değiştirin (ör. `info@toprakguncesi.com`).
 2. Siteyi yayınlayın ve formdan **bir test mesajı** gönderin.
 3. FormSubmit, bu adrese bir **aktivasyon e-postası** yollar; içindeki bağlantıya
    bir kez tıklayın. Bundan sonra tüm form mesajları bu adrese düşer.

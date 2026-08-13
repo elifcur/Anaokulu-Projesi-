@@ -1,12 +1,12 @@
 /* ============================================================
-   HEREN DOĞA ANAOKULU — tasarım sistemi
+   TOPRAK GÜNCESİ ANAOKULU — tasarım sistemi
    "Doğanın içinde bir masal çayırı"
    Palet logodan türetildi. Fraunces (masalsı serif) + Nunito.
    ============================================================ */
 
 :root {
   /* renk — kağıt & doğa */
-  --paper: #f6efdd;
+  --paper: #fbefe3;
   --paper-2: #fbf6e8;
   --card: #fffdf6;
   --ink: #2c3a20;
@@ -21,6 +21,11 @@
   --terra-deep: #d4550c;
   --gold: #fbb50a;
   --sky: #6fc0cf;
+
+  /* logodan birebir örneklenen tonlar (yazı-logo eşleşmesi için) */
+  --logo-green: #536625;
+  --logo-orange: #dd740a;
+  --logo-brown: #7c4919;
 
   /* bölüm arka plan tonları */
   --t-cream: #faf2dd;
@@ -103,6 +108,7 @@ body::before {
 }
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 a {
@@ -228,7 +234,7 @@ p {
   transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
 }
 .nav.scrolled {
-  background: rgba(246, 239, 221, 0.82);
+  background: rgba(251, 239, 227, 0.82);
   backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--line), 0 12px 30px -24px rgba(53, 70, 25, 0.6);
 }
@@ -241,12 +247,32 @@ p {
 .brand {
   display: inline-flex;
   align-items: center;
+  gap: 0.62rem;
 }
 .brand__logo {
-  height: clamp(54px, 5.5vw, 68px);
+  height: clamp(48px, 4.4vw, 60px);
   width: auto;
   display: block;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* logo yuvarlak olduğu için okul adı yanında yazıyla tekrar edilir */
+.brand__name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.02rem, 1.5vw, 1.22rem);
+  line-height: 1.08;
+  color: var(--logo-green);
+  white-space: nowrap;
+}
+/* harf renkleri logodaki dizilimi izler: T-o-p-r-a-k */
+.brand__ch--yesil {
+  color: var(--logo-green);
+}
+.brand__ch--turuncu {
+  color: var(--logo-orange);
+}
+.brand__ch--kahve {
+  color: var(--logo-brown);
 }
 .brand:hover .brand__logo {
   transform: rotate(-1.5deg) scale(1.03);
@@ -254,7 +280,7 @@ p {
 .brand__badge {
   width: 56px;
   height: 56px;
-  border-radius: 16px;
+  border-radius: 50%;
   background: var(--card);
   display: grid;
   place-items: center;
@@ -274,12 +300,14 @@ p {
   font-size: 0.66rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--terra);
+  color: var(--logo-green);
 }
+/* marka solda, linkler ortada, İletişim sağda kalsın */
 .nav__links {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  margin-inline: auto;
 }
 .nav__links a {
   padding: 0.5rem 0.85rem;
@@ -399,9 +427,8 @@ p {
 .hero__logo {
   position: relative;
   z-index: 3;
-  width: min(126%, 860px);
-  margin-inline: -8% -6%;
-  filter: drop-shadow(0 26px 40px rgba(53, 70, 25, 0.28));
+  width: min(100%, 520px);
+  filter: drop-shadow(0 22px 36px rgba(53, 70, 25, 0.24));
   animation: sway 6.5s ease-in-out infinite;
   transform-origin: 50% 90%;
 }
@@ -409,7 +436,7 @@ p {
 .hero__halo {
   position: absolute;
   z-index: 1;
-  width: 88%;
+  width: min(124%, 640px);
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(
@@ -1488,7 +1515,8 @@ p {
   }
 }
 @media (max-width: 640px) {
-  .nav__links {
+  .nav__links,
+  .nav__cta {
     display: none;
   }
   .nav__mobtools {

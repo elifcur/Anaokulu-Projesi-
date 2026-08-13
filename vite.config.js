@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // Yayın alt yolu (base):
-//  - Kök alan adı için (ör. https://herendoga.com) → '/'  (varsayılan)
+//  - Kök alan adı için (ör. https://toprakguncesi.com) → '/'  (varsayılan)
 //  - GitHub Pages için (https://elifcur.github.io/Anaokulu-Projesi-/) → '/Anaokulu-Projesi-/'
 //
 // GitHub Pages'e build almak için:

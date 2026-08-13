@@ -24,7 +24,7 @@ export default function Footer() {
             <span className="brand__badge">
               <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="" />
             </span>
-            <span>Heren Doğa</span>
+            <span>Toprak Güncesi</span>
           </div>
           <p className="tag">“{OKUL.slogan}”</p>
           <p style={{ marginTop: '1rem', opacity: 0.8, maxWidth: '34ch' }}>

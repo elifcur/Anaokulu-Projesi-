@@ -5,7 +5,7 @@ import { join, parse } from 'node:path'
 const SRC = 'images'
 const OUT = 'public/kitaplar'
 // Logo files to skip (handled separately)
-const SKIP = new Set(['logo-heren.jpg', 'yayinevi-logo.jpg'])
+const SKIP = new Set(['Toprak_güncesi_logo.jpg', 'yayinevi-logo.jpg'])
 
 await mkdir(OUT, { recursive: true })
 const files = (await readdir(SRC)).filter(
@@ -38,6 +38,6 @@ for (const file of files) {
   process.stdout.write(`\r${i}/${files.length} ${file.slice(0, 20)}...            `)
 }
 
-// Also optimize the logo to a transparent-friendly webp + png passthrough
+// Logo türevleri ayrı script'te: node scripts/make-logo.mjs
 console.log(`\nDone: ${i} covers -> ${OUT}`)
 console.log(JSON.stringify(manifest.map((m) => m.id)))

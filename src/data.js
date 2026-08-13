@@ -1,13 +1,13 @@
 // Tüm site içeriği tek yerde — düzenlemesi kolay olsun diye.
 
 export const OKUL = {
-  ad: 'Heren Doğa Anaokulu',
-  adTam: 'Özel Heren Doğa Anaokulu',
+  ad: 'Toprak Güncesi Anaokulu',
+  adTam: 'Toprak Güncesi Anaokulu',
   slogan: 'Doğanın içinde, çocuğun ritminde.',
   telefon: '+90 (___) ___ __ __',
-  eposta: 'info@herenanaokulu.com',
+  eposta: 'info@toprakguncesi.com',
   adres: 'Adres bilgisi buraya',
-  instagram: '@herendoga',
+  instagram: '@toprakguncesi',
 }
 
 // Kahraman bölümdeki büyük şiir (1. metin, kısaltılmış çekirdek)
